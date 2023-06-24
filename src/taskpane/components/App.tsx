@@ -3,6 +3,8 @@ import { DefaultButton } from "@fluentui/react";
 import Header from "./Header";
 import HeroList, { HeroListItem } from "./HeroList";
 import Progress from "./Progress";
+import Category from "./Category";
+import MailBodyUpdator from "./MailBodyUpdator";
 
 /* global require */
 
@@ -26,18 +28,18 @@ export default class App extends React.Component<AppProps, AppState> {
   componentDidMount() {
     this.setState({
       listItems: [
-        {
-          icon: "Ribbon",
-          primaryText: "Achieve more with Office integration",
-        },
-        {
-          icon: "Unlock",
-          primaryText: "Unlock features and functionality",
-        },
-        {
-          icon: "Design",
-          primaryText: "Create and visualize like a pro",
-        },
+        // {
+        //   icon: "Ribbon",
+        //   primaryText: "Achieve more with Office integration",
+        // },
+        // {
+        //   icon: "Unlock",
+        //   primaryText: "Unlock features and functionality",
+        // },
+        // {
+        //   icon: "Design",
+        //   primaryText: "Create and visualize like a pro",
+        // },
       ],
     });
   }
@@ -46,7 +48,8 @@ export default class App extends React.Component<AppProps, AppState> {
     /**
      * Insert your Outlook code here
      */
-    console.log("The add-in has been clicked.");
+    console.log("Is 1.3 supported?"+Office.context.requirements.isSetSupported("Mailbox", '1.3'));
+    
   };
 
   render() {
@@ -64,8 +67,8 @@ export default class App extends React.Component<AppProps, AppState> {
 
     return (
       <div className="ms-welcome">
-        <Header logo={require("./../../../assets/logo-filled.png")} title={this.props.title} message="Welcome" />
-        <HeroList message="Discover what Office Add-ins can do for you today!" items={this.state.listItems}>
+        {/* <Header logo={require("./../../../assets/logo-filled.png")} title={this.props.title} message="Welcome" /> */}
+        <HeroList message="CS791 outlook add-on demo" items={this.state.listItems}>
           <p className="ms-font-l">
             Modify the source files, then click <b>Run</b>.
           </p>
@@ -73,6 +76,8 @@ export default class App extends React.Component<AppProps, AppState> {
             Run
           </DefaultButton>
         </HeroList>
+        <Category />
+        <MailBodyUpdator MailBody="This is the hardcoded content"/>
       </div>
     );
   }
