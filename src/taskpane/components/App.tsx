@@ -5,6 +5,7 @@ import HeroList, { HeroListItem } from "./HeroList";
 import Progress from "./Progress";
 import Category from "./Category";
 import MailBodyUpdator from "./MailBodyUpdator";
+import SupportedVersion from "./SupportedVersion";
 
 /* global require */
 
@@ -78,6 +79,7 @@ export default class App extends React.Component<AppProps, AppState> {
         </HeroList>
         <Category />
         <MailBodyUpdator MailBody="This is the hardcoded content"/>
+        <SupportedVersion/>
       </div>
     );
   }
