@@ -8,8 +8,8 @@ const SupportedVersion = (props) => {
     }
 
     return (
-        <div id="supportedVersion">
-            <td>Version</td><td>IsSupported</td>
+        <table id="supportedVersion"><tbody>
+            <tr><td>Version</td><td>IsSupported</td></tr>
             <tr><td>1.1 </td><td>{`${isSetSupported("1.1")}`}</td></tr>
             <tr><td>1.2 </td><td>{`${isSetSupported("1.2")}`}</td></tr>
             <tr><td>1.3 </td><td>{`${isSetSupported("1.3")}`}</td></tr>
@@ -25,7 +25,7 @@ const SupportedVersion = (props) => {
             <tr><td>1.13 </td><td>{`${isSetSupported("1.13")}`}</td></tr>
             <tr><td>1.14 </td><td>{`${isSetSupported("1.14")}`}</td></tr>
             <tr><td>1.15 </td><td>{`${isSetSupported("1.15")}`}</td></tr>
-        </div>
+        </tbody></table>
     )
 };
 

@@ -15,6 +15,13 @@ const MailBodyUpdator = (props) => {
                 }
             }
         );
+        // Office.context.mailbox.item.subject.setAsync("Hello world!", function (asyncResult) {
+        //     if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+        //         console.log("Subject set successfully");
+        //     } else {
+        //         console.error("Failed to set subject", asyncResult.error);
+        //     }
+        // });
     }
 
     function isSetSupported(minVersion: string) {
@@ -26,7 +33,7 @@ const MailBodyUpdator = (props) => {
             <div>Mail Body Manipulator</div>
             <button onClick={prependMailBody}>Replace selected(web-only)</button>
         </div>
-    );
+    ); 
 };
 
 export default MailBodyUpdator;
