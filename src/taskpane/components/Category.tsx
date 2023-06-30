@@ -2,7 +2,29 @@ import React, {useState} from "react";
 
 const Category = (props) => {
     const [category, setCategory] = useState(props.category);
+
+    React.useEffect(() => {
+      Office.onReady(function(){
+        Office.context.mailbox.addHandlerAsync(
+          Office.EventType.ItemChanged, 
+          handleItemChanged,
+          (result) => {
+            if (result.status === Office.AsyncResultStatus.Failed) {
+              console.log('Failed to add item changed handler:', result.error);
+            } else {
+              console.log('Item changed handler added successfully');
+            }
+          }
+        );
+        console.log("Office.onReady has run ...");
+      });
+    }, []);
     
+    function handleItemChanged() {
+      getCategories();
+      console.log("Item has changed");
+    }
+
     function getCategories() {
         Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
           if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
