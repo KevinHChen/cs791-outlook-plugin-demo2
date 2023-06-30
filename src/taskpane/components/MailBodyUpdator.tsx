@@ -30,7 +30,7 @@ const MailBodyUpdator = (props) => {
 
     return (
         <div>
-            <div>Mail Body Manipulator</div>
+            <h2>Mail Body Manipulator</h2>
             <button onClick={prependMailBody}>Replace selected(web-only)</button>
         </div>
     ); 

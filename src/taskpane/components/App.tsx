@@ -6,6 +6,7 @@ import Progress from "./Progress";
 import Category from "./Category";
 import MailBodyUpdator from "./MailBodyUpdator";
 import SupportedVersion from "./SupportedVersion";
+import MultipleSelect from "./MultipleSelect";
 
 /* global require */
 
@@ -78,6 +79,7 @@ export default class App extends React.Component<AppProps, AppState> {
           </DefaultButton>
         </HeroList>
         <Category />
+        <MultipleSelect/>
         <MailBodyUpdator MailBody="This is the hardcoded content"/>
         <SupportedVersion/>
       </div>

@@ -63,6 +63,7 @@
                     <Action xsi:type="ShowTaskpane">
                       <SourceLocation resid="Taskpane.Url"/>
                       <SupportsPinning>true</SupportsPinning>
+                      <SupportsNoItemContext>true</SupportsNoItemContext>
                     </Action>
                   </Control>
                   <Control xsi:type="Button" id="ActionButton">
